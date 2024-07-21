@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+span {
+  color: blue;
+}
+.section-title {
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: 5px;
+  word-spacing: 8px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+/* Navigation Bar */
+#nav-bar {
+  width: 100%;
+  height: 10%;
+  z-index: 2;
+  position: fixed;
+}
+.nav-bar {
+  display: flex;
+  background-color: rgb(31, 30, 30, 0.24);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav-bar > a {
+  font-size: 25px;
+  font-weight: bold;
+}
+.menu ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.menu ul li a {
+  font-size: 20px;
+  position: relative;
+}
+.menu ul li a:hover {
+  color: blue;
+}
+.menu ul li a::after {
+  content: "";
+  width: 0;
+  background-color: blue;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+.menu ul li a:hover::after {
+  width: 100%;
+}
+.menu-padding {
+  padding: 20px 5%;
+}
+.default-padding {
+  padding: 0 5%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* Hero Section */
+#hero {
+  background-image: url(images/hero-bg-lg.jpeg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#hero::after {
+  content: "";
+  background-color: rgb(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#hero > div {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#hero button,
+#mywork button,
+#contact-me button {
+  color: white;
+  background-color: transparent;
+  border-style: solid;
+  padding: 14px 14px;
+  font-size: 20px;
+  font-weight: bold;
+  border-color: blue;
+  border-radius: 6px;
+  font-family: "Times New Roman", Times, serif;
+}
+#hero button:hover,
+#mywork button:hover,
+#contact-me button:hover {
+  background-color: rgb(10, 10, 198);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* About Section */
+#about > div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+#about .about-img {
+  margin-top: 100px;
+  flex-basis: 30%;
+}
+#about .about-description {
+  flex-basis: 65%;
+}
+#about img {
+  width: 100%;
+  border-radius: 8px;
+}
+.tab-container {
+  display: flex;
+  padding-top: 25px;
+  margin-bottom: 35px;
+}
+#about p {
+  color: #ababab;
+}
+#about .tab-item {
+  font-size: 22px;
+  margin-right: 25px;
+  position: relative;
+}
+#about .tab-item::after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  background-color: blue;
+  left: 0;
+  width: 50%;
+  bottom: -8px;
+}
+/* End About Section */
+
+/* Service Section */
+#service-section i {
+  font-size: 60px;
+}
+.service-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.service-box {
+  flex-basis: 30%;
+  background-color: #262626;
+  border-radius: 10px;
+  padding: 40px;
+  transition: 0.5s;
+}
+.service-box h2 {
+  margin: 30px 0;
+}
+.service-box p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.service-box a {
+  font-size: 13px;
+}
+#service-section .service-box:hover {
+  background-color: blue;
+  transform: translateY(-10px);
+}
+/* My Work */
+#mywork {
+  margin-top: 50px;
+}
+#mywork > div {
+  display: flex;
+  justify-content: space-between;
+}
+#mywork .mywork-container {
+  flex-basis: 30%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+#mywork img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+#mywork button {
+  padding: 14px 50px;
+  margin: 30px auto;
+}
+#mywork .layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgb(0, 0, 0, 0.6), blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.description {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+#mywork .mywork-container:hover .layer {
+  height: 100%;
+  cursor: pointer;
+}
+#mywork .mywork-container:hover img {
+  transform: scale(1.2);
+}
+/* End My Work */
+
+/* Contact Me */
+.contactme-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-info {
+  flex-basis: 45%;
+}
+.contact-info p {
+  font-size: 20px;
+  padding-bottom: 12px;
+}
+.contact-info div ~ i {
+  padding-right: 12px;
+  padding-top: 10px;
+  font-size: 25px;
+  color: #9b9a9a;
+}
+#contact-me .contact-info button {
+  display: block;
+  margin: 30px auto;
+  padding: 14px 50px;
+}
+.fa-telegram,
+.fa-phone-volume {
+  color: blue;
+  font-size: 25px;
+}
+.email,
+.phone-number {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.contact-submit {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.contact-submit input,
+textarea {
+  padding: 8px;
+  margin: 8px 0;
+  background-color: #262626;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+#contact-me .contact-submit button {
+  margin: 25px 0;
+  padding: 14px 50px;
+}
